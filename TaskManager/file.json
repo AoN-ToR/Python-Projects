@@ -1,1 +1,10 @@
-{}
+{
+    "Task 1": {
+        "description": "Exemple",
+        "done": false
+    },
+    "Task 2": {
+        "description": "Exemple 2",
+        "done": false
+    }
+}
