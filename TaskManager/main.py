@@ -18,16 +18,16 @@ def addTask(f_dict):
     taskDescription = input("Task description: ")
     f_dict[taskName] = taskDescription
     print("Task has been added.")
-    return f_dict
+    return
 
 def delTask(f_dict):
     taskName = input("Task title: ")
     if taskName in f_dict.keys():
         f_dict.pop(taskName)
         print("Task has been removed.")
-        return f_dict
+        return
     print("No such task is currently saved.")
-    return f_dict
+    return
 
 
 def loadFile(file):
@@ -42,7 +42,7 @@ def loadFile(file):
 def saveChanges(file, f_dict):
     try:
         with open(file, 'w') as f:
-            f.write(json.dumps(f_dict))
+            json.dump(f_dict, f, indent=4)
         print("File Saved")
         return
     except FileNotFoundError:
@@ -55,12 +55,12 @@ while True:
     user_input = input("\nChoose what to do next: \n(1) Add task\n(2) Delete task\n(3) See tasks\n(4) Quit\n")
     if user_input == "1" or user_input == "(1)":
         sys.stdout.write("\033[F")
-        f_dict = addTask(f_dict)
+        addTask(f_dict)
         print("\r ")
     elif user_input == "2" or user_input == "(2)":
         sys.stdout.write("\033[F")
         print("\r ")
-        f_dict = delTask(f_dict)
+        delTask(f_dict)
     elif user_input == "3" or user_input == "(3)":
         sys.stdout.write("\033[F")
         print("\r ")
@@ -76,5 +76,5 @@ while True:
         
 try:
     saveChanges(file, f_dict)
-except:
-    print("Error while trying to save data.")
+except Exception as e:
+    print("Error while trying to save data:", e)
