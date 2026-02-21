@@ -6,5 +6,9 @@
     "Task 2": {
         "description": "Exemple 2",
         "done": false
+    },
+    "Task 3": {
+        "description": "To do this app",
+        "done": true
     }
 }

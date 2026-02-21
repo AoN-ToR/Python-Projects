@@ -1,0 +1,42 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #021332;
+  color: white;
+}
+
+main {
+  flex: 1;
+}
+
+.part1 {
+  height: 50vh;
+  overflow-y: scroll;
+  border-radius: 1rem;
+  border: 2px solid rgb(184, 184, 184);
+}
+
+.table {
+  color: white;
+}
+
+footer {
+  width: 100%;
+  background-color: #242424;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer i {
+  font-size: 3rem;
+  color: white;
+  margin: 0 10px;
+  vertical-align: middle;
+}
