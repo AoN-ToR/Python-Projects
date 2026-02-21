@@ -35,6 +35,7 @@
 
   <main class="container-fluid">
     <div class="table-responsive part1">
+      <h2>See Tasks</h2>
       <table class="table">
         <thead>
           <tr>
@@ -67,7 +68,7 @@
     </div>
 
     <div class="container-fluid">
-      <div class="container">
+      <div class="container part2">
         <h2>Add a task</h2>
         <form method="POST" action="/add">
           <div class="form-group">
@@ -78,7 +79,7 @@
             <label for="description">Task Description</label>
             <input type="textarea" name="description" class="form-control" required>
           </div>
-          <button type="submit" class="btn btn-default">Add</button>
+          <button type="submit" class="btn btn-sm btn-success">Add</button>
         </form>
       </div>
     </div>
