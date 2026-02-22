@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Task Stats
+{% endblock title %}
+
+{% block activeStats %}
+  class="active"
+{% endblock activeStats %}
+
+{% block content %}
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4 text-left container stats-text">
+                <h2>{{ nb_task }} Tasks</h2>
+                <h3>{{ nb_done }} completed</h3>
+            </div>
+            <div class="col-sm-8 container stats-bar">
+                <div class="progress" style="height: 3rem">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ completion }}%" aria-valuenow="{{ completion }}" aria-valuemin="0" aria-valuemax="100">{{completion}}%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

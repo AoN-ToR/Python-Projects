@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block title%}
+  HomePage
+{% endblock title %}
+
+{% block activeHome %}
+  class="active"
+{% endblock activeHome %}
+
+{% block content %}
+    <div class="table-responsive part1 container">
+      <h2>See Tasks</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Action</th>
+            <th>Task Description</th>
+            <th>State</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for name, task in tasks.items() %}
+          <tr>
+            <td>{{ name }}</td>
+            <td>
+              <a href="{{ url_for('done', taskName=name) }}" class="btn btn-sm btn-success">Done</a>
+              <a href="{{ url_for('undone', taskName=name) }}" class="btn btn-sm btn-warning">Undone</a>
+              <a href="{{ url_for('delete', taskName=name) }}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+            <td>{{ task.description}}</td>
+            {% if task.done %}
+            <td>Done</td>
+            {% else %}
+            <td>To do</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container part2">
+        <h2>Add a task</h2>
+        <form method="POST" action="/add">
+          <div class="form-group">
+            <label for="taskName">Task Name</label>
+            <input type="text" name="taskName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Task Description</label>
+            <textarea name="description" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-sm btn-success">Add</button>
+        </form>
+      </div>
+    </div>
+
+{% endblock content %}
