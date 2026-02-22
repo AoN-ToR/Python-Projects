@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for, flash
 from tasks import addTask, markDone, markUndone, delTask
 from storage import loadFile, saveChanges
 
 FILE_PATH = "file.json"
 
 app = Flask(__name__)
+app.secret_key="secret"
 
 @app.route('/')
 def homepage():
@@ -14,11 +15,14 @@ def homepage():
 @app.route('/add', methods=['POST'])
 def add():
     taskName=request.form.get("taskName", "").strip()
+    taskName = taskName.replace(" ", "_")
     taskDesc=request.form.get("description", "").strip()
     
     tasks=loadFile(FILE_PATH)
     addTask(tasks, taskName, taskDesc)
     saveChanges(FILE_PATH, tasks)
+    
+    flash("Task added")
     
     return redirect('/')
 
@@ -27,6 +31,8 @@ def delete(taskName):
     tasks=loadFile(FILE_PATH)
     delTask(tasks, taskName)
     saveChanges(FILE_PATH, tasks)
+    
+    flash("Task deleted")
     
     return redirect('/')
 
@@ -54,7 +60,10 @@ def stats():
     for task in tasks.values():
         if task['done']:
             nb_done += 1
-    completion=round(nb_done/nb_task*100)
+    if nb_task == 0:
+        completion = 0
+    else:
+        completion = round(nb_done / nb_task * 100)
     return render_template('stats.html', nb_task=nb_task, nb_done=nb_done, completion=completion)
 
 @app.route('/see')

@@ -24,9 +24,9 @@
           <tr>
             <td>{{ name }}</td>
             <td>
-              <a href="/done/{{ name }}" class="btn btn-sm btn-success">Done</a>
-              <a href="/undone/{{ name }}" class="btn btn-sm btn-warning">Undone</a>
-              <a href="/delete/{{ name }}" class="btn btn-sm btn-danger">Delete</a>
+              <a href="{{ url_for('done', taskName=name) }}" class="btn btn-sm btn-success">Done</a>
+              <a href="{{ url_for('undone', taskName=name) }}" class="btn btn-sm btn-warning">Undone</a>
+              <a href="{{ url_for('delete', taskName=name) }}" class="btn btn-sm btn-danger">Delete</a>
             </td>
             <td>{{ task.description}}</td>
             {% if task.done %}
@@ -34,7 +34,6 @@
             {% else %}
             <td>To do</td>
             {% endif %}
-            <td></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -51,7 +50,7 @@
           </div>
           <div class="form-group">
             <label for="description">Task Description</label>
-            <input type="textarea" name="description" class="form-control" required>
+            <textarea name="description" class="form-control" required></textarea>
           </div>
           <button type="submit" class="btn btn-sm btn-success">Add</button>
         </form>
