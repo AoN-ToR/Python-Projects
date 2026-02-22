@@ -49,7 +49,13 @@ def undone(taskName):
 @app.route('/stats')
 def stats():
     tasks=loadFile(FILE_PATH)
-    return render_template('stats.html')
+    nb_task=len(tasks.keys())
+    nb_done=0
+    for task in tasks.values():
+        if task['done']:
+            nb_done += 1
+    completion=round(nb_done/nb_task*100)
+    return render_template('stats.html', nb_task=nb_task, nb_done=nb_done, completion=completion)
 
 @app.route('/see')
 def see():

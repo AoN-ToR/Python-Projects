@@ -48,6 +48,19 @@ main {
   color: white;
 }
 
+.stats-text {
+  height: 14rem;
+  background-color: #00276e;
+  border: 2px solid black;
+}
+
+.stats-bar {
+  height: 14rem;
+  background-color: #00276e;
+  border: 2px solid black;
+  padding-top: 2rem;
+}
+
 footer {
   width: 100%;
   background-color: #242424;
