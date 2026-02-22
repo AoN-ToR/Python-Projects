@@ -10,7 +10,7 @@ The project focuses on clean architecture, separation of concerns, and practical
 
 - Add, delete tasks
 - Mark tasks as done / undone
-- Persistent storage using JSON
+- Persistent storage using SQLite3
 - Statistics dashboard (completed tasks & progress)
 - Responsive UI with Bootstrap
 - Clean separation between:
@@ -23,8 +23,8 @@ The project focuses on clean architecture, separation of concerns, and practical
 ## 🛠️ Tech Stack
 
 - **Backend**: Python, Flask
-- **Frontend**: HTML, CSS, Bootstrap, Jinja2
-- **Data storage**: JSON
+- **Frontend**: HTML5, CSS3, Bootstrap, Jinja2
+- **Data storage**: Sqlite3
 - **Architecture**: Modular (routes / logic / storage)
 
 ---
@@ -35,5 +35,5 @@ The project focuses on clean architecture, separation of concerns, and practical
 - Designing a clean and modular architecture
 - Handling form submissions and HTTP methods
 - Connecting frontend templates to backend logic
-- Managing persistent data without a database
+- Managing persistent data within a database
 - Using Bootstrap for responsive UI design
