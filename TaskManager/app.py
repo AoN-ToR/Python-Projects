@@ -46,5 +46,14 @@ def undone(taskName):
     
     return redirect('/')
 
+@app.route('/stats')
+def stats():
+    tasks=loadFile(FILE_PATH)
+    return render_template('stats.html')
+
+@app.route('/see')
+def see():
+    return render_template('see.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

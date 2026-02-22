@@ -10,7 +10,7 @@ def loadFile(file):
     except FileNotFoundError:
         print("The file was not found. Creating a new one.")
         return {}
-# at the end of the script, saves changes
+    
 def saveChanges(file, f_dict):
     with open(file, 'w') as f:
         json.dump(f_dict, f, indent=4)

@@ -11,14 +11,6 @@ def delTask(f_dict, taskName):
         return True, "Task removed"
     return False, "Task not found"
 
-def seeTask(f_dict):
-    text = ""
-    for k, v in f_dict.items():
-        desc = v["description"]
-        done = v["done"]
-        text += f"{k}: {desc} " + ("(Done)\n" if done else "(Not done)\n")
-    return True, text
-
 def markDone(f_dict, taskName):
     if taskName in f_dict:    
         f_dict[taskName]["done"] = True

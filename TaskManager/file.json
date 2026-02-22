@@ -1,14 +1,30 @@
 {
-    "Task 1": {
-        "description": "Exemple",
-        "done": false
-    },
-    "Task 2": {
-        "description": "Exemple 2",
-        "done": false
-    },
     "Task 3": {
         "description": "To do this app",
         "done": true
+    },
+    "Task 2": {
+        "description": "hey",
+        "done": false
+    },
+    "Task 1": {
+        "description": "irhguire",
+        "done": false
+    },
+    "Task 0": {
+        "description": "Code",
+        "done": true
+    },
+    "uhfgrz": {
+        "description": "rzejkghurzuik",
+        "done": false
+    },
+    "Hello world": {
+        "description": "maybe i should learn more",
+        "done": true
+    },
+    "task x": {
+        "description": "x things todo",
+        "done": false
     }
 }

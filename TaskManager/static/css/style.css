@@ -21,9 +21,9 @@ main {
 
 .part1 {
   height: 50vh;
-  overflow-y: scroll;
   border-radius: 1rem;
   border: 2px solid rgb(184, 184, 184);
+  overflow-y: scroll;
 }
 
 .part1 h2 {
