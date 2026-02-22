@@ -1,26 +1,16 @@
-def addTask(f_dict, taskName, taskDescription):
-    if taskName in f_dict:
-        return False, "Name already used"
-    f_dict[taskName] = {"description": taskDescription, "done":False}
-    return True, "Task added"
+from database import addTask as dbAdd, delTask as dbDel, markDone as dbDone, markUndone as dbUndone, getTasks as dbGetTasks
 
-def delTask(f_dict, taskName):
-    if taskName in f_dict:
-        f_dict.pop(taskName)
-        print("Task has been removed.")
-        return True, "Task removed"
-    return False, "Task not found"
+def addTask(name, description):
+    return dbAdd(name, description)
 
-def markDone(f_dict, taskName):
-    if taskName in f_dict:    
-        f_dict[taskName]["done"] = True
-        return True, f"{taskName} marked done"
-    else:
-        return False, "Task not found"
+def delTask(name):
+    return dbDel(name)
 
-def markUndone(f_dict, taskName):
-    if taskName in f_dict:    
-        f_dict[taskName]["done"] = False
-        return True, f"{taskName} marked not done"
-    else:
-        return False, "Task not found"
+def markDone(name):
+    return dbDone(name)
+
+def markUndone(name):
+    return dbUndone(name)
+
+def getTasks():
+    return dbGetTasks()
