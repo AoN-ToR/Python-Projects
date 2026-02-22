@@ -66,9 +66,5 @@ def stats():
         completion = round(nb_done / nb_task * 100)
     return render_template('stats.html', nb_task=nb_task, nb_done=nb_done, completion=completion)
 
-@app.route('/see')
-def see():
-    return render_template('see.html')
-
 if __name__ == "__main__":
     app.run(debug=True)
