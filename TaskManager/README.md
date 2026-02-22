@@ -56,6 +56,8 @@ python app.py
 ```
 4. Open in browser
 
+---
+
 ## 📸 Screenshots
 ![Screenshot 1](static/images/Screenshot1.png)
 ![Screenshot 2](static/images/Screenshot2.png)
